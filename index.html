@@ -14,10 +14,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            column-gap: 20px;
         }
-        .btn{
-            padding: 2.135vw 2.396vw;
-            display: inline-flex;
+        .new-btn{
+            overflow: hidden;
+            display: flex;
             align-items: center;
             justify-content: center;
             transition: all .4s;
@@ -38,12 +39,20 @@
             width: 350px;
             height: 77px;
             box-sizing: border-box;
+            gap: 1.198vw;
         }
-        .btn:hover{
+        .new-btn-black {
+            box-shadow: 0 43px 101px rgba(0, 0, 0, 0.2), 0 4px 0 #333333, inset 0 0 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(180deg, #333333 0%, #1a1a1a 100%), #1a1a1a;
+        }
+        .new-btn:hover{
             box-shadow: 0 43px 101px rgba(116, 166, 197, 0.2), 0 -4px 0 #5c8198, inset 0 0 15px rgba(57, 74, 83, 0.3);
         }
+        .new-btn-black:hover{
+            box-shadow: 0 43px 101px rgba(0, 0, 0, 0.2), 0 -4px 0 #333333, inset 0 0 15px rgba(0, 0, 0, 0.3);
+        }
 
-        .btn:after{
+        .new-btn_after:after{
             margin-left: -30px;
             content: " ";
             width: 30px;
@@ -64,6 +73,45 @@
             animation-iteration-count: infinite;
             transform: rotate(45deg);
         }
+        .btn-arrows--left{
+            transform: rotate(180deg);
+        }
+        .btn-arrows {
+            display: flex;
+            align-items: center;
+            gap: .208vw;
+        }
+        .btn-arrow{
+            width: 7.5px;
+            height: 14px;
+            -webkit-animation: opacity 2s ease-in infinite;
+            animation: opacity 2s ease-in infinite;
+        }
+        .btn-arrow:nth-child(3) {
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+        }
+        .btn-arrow:nth-child(2){
+            -webkit-animation-delay: .2s;
+            animation-delay: .2s;
+        }
+        .lazyloaded{
+            opacity: 1;
+            transition: opacity .3s;
+            width: 7.5px;
+            height: 14px;
+        }
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: .5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
         @keyframes slideme {
             0% {
                 left: -30px;
@@ -83,7 +131,58 @@
 </head>
 <body>
     <div class="container">
-        <a class="btn" href="">Заказать звонок</a>
+        <a class="new-btn new-btn_after" href="">
+            <div class="btn-arrows">
+                <div class="btn-arrow btn-arrow-1">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-2">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-3">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+            </div>
+            Заказать звонок
+            <div class="btn-arrows btn-arrows--left">
+
+                <div class="btn-arrow btn-arrow-1">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-2">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-3">
+                    <img class="lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+            </div>
+        </a>
+
+        <a class="new-btn new-btn-black new-btn_after" href="">
+            <div class="btn-arrows">
+                <div class="btn-arrow btn-arrow-1">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-2">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-3">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+            </div>
+            Каталог материалов
+            <div class="btn-arrows btn-arrows--left">
+
+                <div class="btn-arrow btn-arrow-1">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-2">
+                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+                <div class="btn-arrow btn-arrow-3">
+                    <img class="lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                </div>
+            </div></a>
     </div>
 </body>
 </html>
