@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кнопка для жалюзи-спб.рф</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn{
+            padding: 2.135vw 2.396vw;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .4s;
+            border-radius: 100px;
+            box-shadow: 0 43px 101px rgba(116, 166, 197, 0.2), 0 4px 0 #5c8198, inset 0 0 15px rgba(57, 74, 83, 0.3);
+            background: linear-gradient(180deg, #74a6c5 0%, #5c8198 100%),#5c8198;
+            z-index: 6;
+            font-family: "Arial";
+            cursor: pointer;
+            border: none;
+            position: relative;
+            color: #fff;
+            letter-spacing: .073vw;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            width: 350px;
+            height: 77px;
+            box-sizing: border-box;
+        }
+        .btn:hover{
+            box-shadow: 0 43px 101px rgba(116, 166, 197, 0.2), 0 -4px 0 #5c8198, inset 0 0 15px rgba(57, 74, 83, 0.3);
+        }
+
+        .btn:after{
+            margin-left: -30px;
+            content: " ";
+            width: 30px;
+            height: 300px;
+            background: #fff;
+            -webkit-animation-delay: 50ms;
+            animation-delay: 50ms;
+            position: absolute;
+            left: -40px;
+            top: -150px;
+            top-animation-timing-function: ease-in-out;
+            transition: all .1s;
+            -webkit-animation-name: slideme;
+            animation-name: slideme;
+            -webkit-animation-duration: 3.5s;
+            animation-duration: 3.5s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            transform: rotate(45deg);
+        }
+        @keyframes slideme {
+            0% {
+                left: -30px;
+                margin-left: 0;
+            }
+            30% {
+                left: 110%;
+                margin-left: 80px;
+            }
+            100% {
+                left: 110%;
+                margin-left: 80px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="btn" href="">Заказать звонок</a>
+    </div>
+</body>
+</html>
