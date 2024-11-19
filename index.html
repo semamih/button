@@ -1,194 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Кнопка для жалюзи-спб.рф</title>
+    <title>жалюзи-спб.рф</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        body{
+            font-family: Arial;
+            padding-top: 100px;
+        }
         *{
             padding: 0;
             margin: 0;
         }
-        .container{
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-            column-gap: 20px;
-            row-gap: 20px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        .new-btn{
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .4s;
-            border-radius: 100px;
-            box-shadow: 0 43px 101px rgba(116, 166, 197, 0.2), 0 4px 0 #5c8198, inset 0 0 15px rgba(57, 74, 83, 0.3);
-            background: linear-gradient(180deg, #74a6c5 0%, #5c8198 100%),#5c8198;
-            z-index: 6;
-            font-family: "Arial";
-            cursor: pointer;
-            border: none;
-            position: relative;
-            color: #fff;
-            letter-spacing: .073vw;
-            text-transform: uppercase;
-            font-weight: 600;
+        a{
             text-decoration: none;
-            font-size: 14px;
-            max-width: 350px;
-            width: 100%;
-            height: 77px;
+        }
+        *, ::after, ::before {
             box-sizing: border-box;
-            gap: 15px;
         }
-        .new-btn-black {
-            box-shadow: 0 43px 101px rgba(0, 0, 0, 0.2), 0 4px 0 #333333, inset 0 0 15px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(180deg, #333333 0%, #1a1a1a 100%), #1a1a1a;
+        .b-callback {
+            background-color: #5c8198;
+            color: #fff;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            background-image: url(/images/webp/bg-person-foot.webp);
+            background-repeat: no-repeat;
+            background-position: 95% 100%;
+            box-sizing: border-box;
+            padding-left: 60px;
+            padding-right: 60px;
         }
-        .new-btn:hover{
-            box-shadow: 0 43px 101px rgba(116, 166, 197, 0.2), 0 -4px 0 #5c8198, inset 0 0 15px rgba(57, 74, 83, 0.3);
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         }
-        .new-btn-black:hover{
-            box-shadow: 0 43px 101px rgba(0, 0, 0, 0.2), 0 -4px 0 #333333, inset 0 0 15px rgba(0, 0, 0, 0.3);
+        .col-12, .col-lg-3,.col-lg-6, .col-lg-9,  .col-md-12, .col-md-3,.col-md-9{
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
         }
-
-        .new-btn_after:after{
-            margin-left: -30px;
-            content: " ";
-            width: 30px;
-            height: 300px;
-            background: #fff;
-            -webkit-animation-delay: 50ms;
-            animation-delay: 50ms;
-            position: absolute;
-            left: -40px;
-            top: -150px;
-            top-animation-timing-function: ease-in-out;
-            transition: all .1s;
-            -webkit-animation-name: slideme;
-            animation-name: slideme;
-            -webkit-animation-duration: 3.5s;
-            animation-duration: 3.5s;
-            -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-            transform: rotate(45deg);
+        .col-12 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
         }
-        .btn-arrows--left{
-            transform: rotate(180deg);
+        .b-quote {
+            color: #fff;
         }
-        .btn-arrows {
+        .mb-4, .my-4 {
+            margin-bottom: 1.5rem !important;
+        }
+        .mb-3, .my-3 {
+            margin-bottom: 1rem !important;
+        }
+        .b-quote .quote__title {
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .b-quote > div {
+            line-height: 1.2;
+        }
+        .b-quote .quote__subtitle {
+            font-size: 25px;
+            font-weight: 400;
+        }
+        .b-quote .quote__text {
+            font-size: 20px;
+            font-weight: 400;
+            color: #85b6d5;
+        }
+        .b-quote .quote__nums {
+            font-size: 28px;
+        }
+        .b-socialbox .socialbox__row {
+            display: flex;
+        }
+        .b-socialbox .socialbox__item {
+            padding: 0 3px;
+        }
+        .b-mail {
+            color: #fff;
+            margin-top: 52px;
+        }
+        .b-mail .mail__title {
+            padding: 2px 0;
+            font-size: 25px;
+        }
+        .b-mail .mail__title span {
+            padding-right: 5px;
+            font-weight: 700;
+        }
+        .b-mail .mail__title a {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .b-quote .quote__nums a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .ba-form-column-wrapper{
             display: flex;
             align-items: center;
-            gap: .208vw;
+            justify-content: flex-start;
         }
-        .btn-arrow{
-            width: 7.5px;
-            height: 14px;
-            -webkit-animation: opacity 2s ease-in infinite;
-            animation: opacity 2s ease-in infinite;
+        .ba-form-submit-btn-wrapper{
+            background-color: rgb(255, 190, 37);
+            border-radius: 30px;
+            outline: none;
+            border: none;
+            width: 243px;
+            height: 50px;
+            color: black;
+            font-size: 15px;
+            box-sizing: border-box;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 2.127659574468085%;
         }
-        .btn-arrow:nth-child(3) {
-            -webkit-animation-delay: .3s;
-            animation-delay: .3s;
+        .ba-field-container input{
+            background-color: transparent;
+            border-radius: 30px;
+            border: 1px solid #fff;
+            font-size: 15px;
+            box-sizing: border-box;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+            height: 50px;
+            padding: 10px 15px 10px 54px;
+            width: 305px;
         }
-        .btn-arrow:nth-child(2){
-            -webkit-animation-delay: .2s;
-            animation-delay: .2s;
+        .ba-field-container input::placeholder{
+            color: white;
         }
-        .lazyloaded{
-            opacity: 1;
-            transition: opacity .3s;
-            width: 7.5px;
-            height: 14px;
-        }
-        @keyframes opacity {
-            0% {
-                opacity: 0;
+        @media (min-width: 992px) {
+            .col-lg-9 {
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
             }
-            50% {
-                opacity: .5;
+            .col-lg-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
             }
-            100% {
-                opacity: 1;
+            .col-lg-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
             }
         }
-        @keyframes slideme {
-            0% {
-                left: -30px;
+        @media (min-width: 768px) {
+            .col-md-12 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+        @media (max-width: 767.98px) {
+            body{
+                padding-top: 0;
+            }
+            .b-callback {
+                padding-top: 25px;
+                padding-bottom: 380px;
+                background-size: 380px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .ba-form-column-wrapper{
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: unset;
+                row-gap: 10px;
+            }
+            .ba-form-submit-btn-wrapper{
+                max-width: unset;
+                width: 100%;
+            }
+            .ba-field-container input{
+                max-width: unset;
+                width: 100%;
+            }
+            .ba-form-submit-btn-wrapper{
                 margin-left: 0;
             }
-            30% {
-                left: 110%;
-                margin-left: 80px;
-            }
-            100% {
-                left: 110%;
-                margin-left: 80px;
-            }
         }
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <a class="new-btn new-btn_after" href="">
-            <div class="btn-arrows">
-                <div class="btn-arrow btn-arrow-1">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+        <div class="b-callback b-out">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="b-quote mb-4">
+                        <div class="quote__title">Создадим интерьер Вашей мечты !</div>
+                        <div class="quote__subtitle">и спрячем от любопытных соседей</div>
+                        <div class="quote__text">Звоните, пишите нам: ответим на все Ваши вопросы и найдем выгодные условия</div>
+                    </div>
+                    <div class="b-form-callback--white mb-4"><div class="com-baforms-wrapper">
+                        <form novalidate="" class="ba-form-1 fields-icons-flex-start hidden-navigation-style  b-form-callback" action="https://abelix.by/index.php?option=com_baforms" method="post" enctype="multipart/form-data" data-id="1">
+
+
+                                        <div class="ba-form-column-wrapper">
+                                            <div class="span6 ba-form-column">
+                                                <div class="ba-form-field-item ba-form-input-field " data-type="input" data-hidden="false">
+                                                    <div class="ba-input-wrapper">
+                                                        <div class="ba-field-label-wrapper">
+                                                            <span class="ba-input-label-wrapper"></span>
+                                                        </div>
+                                                        <div class="ba-field-container">
+                                                            <input type="text" name="2" placeholder="+375 ( __ ) ___ - __ - __"  data-mask="+375 ( ## ) ### - ## - ##">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="span6 ba-form-column">
+                                                <div class="ba-form-field-item ba-form-submit-field " data-type="submit">
+                                                    <div class="ba-form-submit-wrapper ba-form-icon-horizontal-slide-in-animation" style="--submit-background-color: rgba(255, 190, 37, 1);--submit-background-hover: rgba(255, 190, 37, 1);--submit-padding-top: 16px;--submit-padding-right: 25px;--submit-padding-bottom: 16px;--submit-padding-left: 25px;--submit-border-top: 0;--submit-border-right: 0;--submit-border-bottom: 0;--submit-border-left: 0;--submit-border-color: #e3e3e3;--submit-border-hover: #e3e3e3;--submit-border-radius: 30px;--submit-border-width: 1px;--submit-typography-font-family: inherit;--submit-typography-font-size: 16px;--submit-typography-letter-spacing: 0px;--submit-typography-line-height: 18px;--submit-typography-color: rgba(0, 0, 0, 1);--submit-typography-hover: rgba(0, 0, 0, 1);--submit-typography-font-weight: bold;--submit-typography-text-align: flex-start;--submit-typography-font-style: normal;--submit-typography-text-transform: none;--submit-icon-size: 24px;--submit-icon-color: rgba(0, 0, 0, 1);--submit-icon-hover: rgba(0, 0, 0, 1);--submit-icon-text-align: row;--submit-shadow-value: 0;--submit-shadow-color: rgba(0, 0, 0, 0.5);--submit-shadow-hover: rgba(0, 0, 0, 0.5);">
+                                                        <div class="ba-form-submit-btn-wrapper">
+                                                            <span class="ba-form-submit-btn" data-captcha=""><i class="zmdi zmdi-mail-send"></i><span class="ba-form-submit-title">Рассчитать стоимость </span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                            </div>
+                            <div class="ba-form-footer">
+                                <input type="hidden" name="form-id" value="1">
+                                <input type="hidden" name="task" value="form.sendMessage">
+                                <input type="hidden" name="submit-btn" value="0">
+                                <input type="hidden" name="page-title" value="Жалюзи купить в Минске: низкие цены, на заказ, скидка 55%">
+                                <input type="hidden" name="page-url" value="https://abelix.by/">
+                                <input type="hidden" name="page-id" value="306">
+                            </div>
+                        </form>
+                    </div>
+                    </div>
                 </div>
-                <div class="btn-arrow btn-arrow-2">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                <div class="col-12"></div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="b-quote mb-4">
+                        <div class="quote__box">
+                            <div class="quote__title mb-3">Нужна помощь ?</div>
+                            <div class="quote__nums"><a href="tel:+375447587134">+7-981-764-55-45</a></div>
+                            <div class="quote__nums"><a href="tel:+375333316322">+7-981-764-55-45</a></div>
+                        </div>
+                    </div>
+                    <div class="b-socialbox">
+                        <div class="socialbox__row">
+                            <div class="socialbox__item"><a target="_blank" href=""><img loading="lazy" src="/images/i-messerger-tg.svg" style="max-width: 37px;" alt=""></a></div>
+                            <div class="socialbox__item"><a target="_blank" href=""><img loading="lazy" src="/images/i-messerger-wp.svg" style="max-width: 37px;" alt=""></a></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="btn-arrow btn-arrow-3">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
+                <div class="col-md-9 col-lg-9">
+                    <div class="b-mail">
+                        <div class="mail__title">
+                            <span>Отдел продаж:</span><span>
+                            <a href="mailto:89817645545@mail.ru">89817645545@mail.ru</a>
+                        </span>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            Заказать звонок
-            <div class="btn-arrows btn-arrows--left">
-
-                <div class="btn-arrow btn-arrow-1">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-                <div class="btn-arrow btn-arrow-2">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-                <div class="btn-arrow btn-arrow-3">
-                    <img class="lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-            </div>
-        </a>
-
-        <a class="new-btn new-btn-black new-btn_after" href="">
-            <div class="btn-arrows">
-                <div class="btn-arrow btn-arrow-1">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-                <div class="btn-arrow btn-arrow-2">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-                <div class="btn-arrow btn-arrow-3">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-            </div>
-            Каталог материалов
-            <div class="btn-arrows btn-arrows--left">
-
-                <div class="btn-arrow btn-arrow-1">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-                <div class="btn-arrow btn-arrow-2">
-                    <img class=" lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-                <div class="btn-arrow btn-arrow-3">
-                    <img class="lazyloaded" src="./img/arrow.png" data-src="./img/arrow.png" alt="стрелка">
-                </div>
-            </div></a>
-    </div>
+        </div>
 </body>
 </html>
+
+
+
+
