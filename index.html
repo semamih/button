@@ -22,15 +22,18 @@
         .b-callback {
             background-color: #5c8198;
             color: #fff;
-            padding-top: 100px;
+            padding-top: 85px;
             padding-bottom: 100px;
-            background-image: url(./images/webp/bgg.png);
-            background-repeat: no-repeat;
-            background-position: 95% 100%;
+            /*background-image: url(./images/webp/bgg.png);*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: 93% 153%;*/
+            overflow: visible;
             box-sizing: border-box;
-            background-size: 420px;
+            /*background-size: 420px;*/
             padding-left: 60px;
             padding-right: 60px;
+            
+            position: relative;
         }
         .row {
             display: -ms-flexbox;
@@ -60,7 +63,7 @@
             margin-bottom: 1rem !important;
         }
         .b-quote .quote__title {
-            font-size: 30px;
+            font-size: 36px;
             font-weight: 600;
         }
         .b-quote > div {
@@ -71,9 +74,9 @@
             font-weight: 400;
         }
         .b-quote .quote__text {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 400;
-            color: #85b6d5;
+            color: #8ccef9;
         }
         .b-quote .quote__nums {
             font-size: 28px;
@@ -86,7 +89,8 @@
         }
         .b-mail {
             color: #fff;
-            margin-top: 52px;
+            /*margin-top: 52px;*/
+            margin-bottom: 30px;
         }
         .b-mail .mail__title {
             padding: 2px 0;
@@ -103,6 +107,7 @@
         .b-quote .quote__nums a {
             color: #fff;
             text-decoration: none;
+            font-weight: 700;
         }
         .ba-form-column-wrapper{
             display: flex;
@@ -142,6 +147,12 @@
         }
         .ba-field-container input::placeholder{
             color: white;
+        }
+        .b-callback .main-img{
+            position: absolute;
+            bottom: -20px;
+            right: 60px;
+            height: 90%;
         }
         @media (min-width: 992px) {
             .col-lg-9 {
@@ -200,85 +211,111 @@
             .ba-form-submit-btn-wrapper{
                 margin-left: 0;
             }
+            .b-quote .quote__title{
+                font-size: 31px;
+            }
+            .b-callback .main-img{
+                position: absolute;
+                bottom: -20px;
+                right: unset;
+                left: 0;
+                height: unset;
+                width: 100%;
+            }
+        }
+        @media (max-width: 375px) {
+            .b-callback {
+                padding-bottom: 400px;
+            }
         }
     </style>
 </head>
 <body>
-        <div class="b-callback b-out">
-            <div class="row">
-                <div class="col-md-12 col-lg-6">
-                    <div class="b-quote mb-4">
-                        <div class="quote__title">Создадим интерьер Вашей мечты !</div>
-                        <div class="quote__subtitle">и спрячем от любопытных соседей</div>
-                        <div class="quote__text">Звоните, пишите нам: ответим на все Ваши вопросы и найдем выгодные условия</div>
-                    </div>
-                    <div class="b-form-callback--white mb-4"><div class="com-baforms-wrapper">
-                        <form novalidate="" class="ba-form-1 fields-icons-flex-start hidden-navigation-style  b-form-callback" action="https://abelix.by/index.php?option=com_baforms" method="post" enctype="multipart/form-data" data-id="1">
+
+            <div class="b-callback">
+                <img src="./images/webp/bgg.png" alt="" class="main-img">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="b-quote mb-4">
+                            <div class="quote__title">Создадим интерьер Вашей мечты !</div>
+                            <div class="quote__subtitle">и спрячем от любопытных соседей</div>
+                            <div class="quote__text">Звоните, пишите нам: ответим на все Ваши вопросы и найдем выгодные условия</div>
+                        </div>
+                        <div class="b-form-callback--white mb-4"><div class="com-baforms-wrapper">
+                            <form novalidate="" class="ba-form-1 fields-icons-flex-start hidden-navigation-style  b-form-callback" action="https://abelix.by/index.php?option=com_baforms" method="post" enctype="multipart/form-data" data-id="1">
 
 
-                                        <div class="ba-form-column-wrapper">
-                                            <div class="span6 ba-form-column">
-                                                <div class="ba-form-field-item ba-form-input-field " data-type="input" data-hidden="false">
-                                                    <div class="ba-input-wrapper">
-                                                        <div class="ba-field-label-wrapper">
-                                                            <span class="ba-input-label-wrapper"></span>
-                                                        </div>
-                                                        <div class="ba-field-container">
-                                                            <input type="text" name="2" placeholder="+7 ( __ ) ___ - __ - __"  data-mask="+375 ( ## ) ### - ## - ##">
-                                                        </div>
-                                                    </div>
+                                <div class="ba-form-column-wrapper">
+                                    <div class="span6 ba-form-column">
+                                        <div class="ba-form-field-item ba-form-input-field " data-type="input" data-hidden="false">
+                                            <div class="ba-input-wrapper">
+                                                <div class="ba-field-label-wrapper">
+                                                    <span class="ba-input-label-wrapper"></span>
+                                                </div>
+                                                <div class="ba-field-container">
+                                                    <input type="text" name="2" placeholder="+7 ( __ ) ___ - __ - __"  data-mask="+375 ( ## ) ### - ## - ##">
                                                 </div>
                                             </div>
-                                            <div class="span6 ba-form-column">
-                                                <div class="ba-form-field-item ba-form-submit-field " data-type="submit">
-                                                    <div class="ba-form-submit-wrapper ba-form-icon-horizontal-slide-in-animation" style="--submit-background-color: rgba(255, 190, 37, 1);--submit-background-hover: rgba(255, 190, 37, 1);--submit-padding-top: 16px;--submit-padding-right: 25px;--submit-padding-bottom: 16px;--submit-padding-left: 25px;--submit-border-top: 0;--submit-border-right: 0;--submit-border-bottom: 0;--submit-border-left: 0;--submit-border-color: #e3e3e3;--submit-border-hover: #e3e3e3;--submit-border-radius: 30px;--submit-border-width: 1px;--submit-typography-font-family: inherit;--submit-typography-font-size: 16px;--submit-typography-letter-spacing: 0px;--submit-typography-line-height: 18px;--submit-typography-color: rgba(0, 0, 0, 1);--submit-typography-hover: rgba(0, 0, 0, 1);--submit-typography-font-weight: bold;--submit-typography-text-align: flex-start;--submit-typography-font-style: normal;--submit-typography-text-transform: none;--submit-icon-size: 24px;--submit-icon-color: rgba(0, 0, 0, 1);--submit-icon-hover: rgba(0, 0, 0, 1);--submit-icon-text-align: row;--submit-shadow-value: 0;--submit-shadow-color: rgba(0, 0, 0, 0.5);--submit-shadow-hover: rgba(0, 0, 0, 0.5);">
-                                                        <div class="ba-form-submit-btn-wrapper">
-                                                            <span class="ba-form-submit-btn" data-captcha=""><i class="zmdi zmdi-mail-send"></i><span class="ba-form-submit-title">Рассчитать стоимость </span></span>
-                                                        </div>
-                                                    </div>
+                                        </div>
+                                    </div>
+                                    <div class="span6 ba-form-column">
+                                        <div class="ba-form-field-item ba-form-submit-field " data-type="submit">
+                                            <div class="ba-form-submit-wrapper ba-form-icon-horizontal-slide-in-animation" style="--submit-background-color: rgba(255, 190, 37, 1);--submit-background-hover: rgba(255, 190, 37, 1);--submit-padding-top: 16px;--submit-padding-right: 25px;--submit-padding-bottom: 16px;--submit-padding-left: 25px;--submit-border-top: 0;--submit-border-right: 0;--submit-border-bottom: 0;--submit-border-left: 0;--submit-border-color: #e3e3e3;--submit-border-hover: #e3e3e3;--submit-border-radius: 30px;--submit-border-width: 1px;--submit-typography-font-family: inherit;--submit-typography-font-size: 16px;--submit-typography-letter-spacing: 0px;--submit-typography-line-height: 18px;--submit-typography-color: rgba(0, 0, 0, 1);--submit-typography-hover: rgba(0, 0, 0, 1);--submit-typography-font-weight: bold;--submit-typography-text-align: flex-start;--submit-typography-font-style: normal;--submit-typography-text-transform: none;--submit-icon-size: 24px;--submit-icon-color: rgba(0, 0, 0, 1);--submit-icon-hover: rgba(0, 0, 0, 1);--submit-icon-text-align: row;--submit-shadow-value: 0;--submit-shadow-color: rgba(0, 0, 0, 0.5);--submit-shadow-hover: rgba(0, 0, 0, 0.5);">
+                                                <div class="ba-form-submit-btn-wrapper">
+                                                    <span class="ba-form-submit-btn" data-captcha=""><i class="zmdi zmdi-mail-send"></i><span class="ba-form-submit-title">Рассчитать стоимость </span></span>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
 
-                            </div>
-                            <div class="ba-form-footer">
-                                <input type="hidden" name="form-id" value="1">
-                                <input type="hidden" name="task" value="form.sendMessage">
-                                <input type="hidden" name="submit-btn" value="0">
-                                <input type="hidden" name="page-title" value="Жалюзи купить в Минске: низкие цены, на заказ, скидка 55%">
-                                <input type="hidden" name="page-url" value="https://abelix.by/">
-                                <input type="hidden" name="page-id" value="306">
-                            </div>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-12"></div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="b-quote mb-4">
-                        <div class="quote__box">
-                            <div class="quote__title mb-3">Нужна помощь ?</div>
-                            <div class="quote__nums"><a href="tel:+375447587134">+7-981-764-55-45</a></div>
+                                </div>
+                                <div class="ba-form-footer">
+                                    <input type="hidden" name="form-id" value="1">
+                                    <input type="hidden" name="task" value="form.sendMessage">
+                                    <input type="hidden" name="submit-btn" value="0">
+                                    <input type="hidden" name="page-title" value="Жалюзи купить в Минске: низкие цены, на заказ, скидка 55%">
+                                    <input type="hidden" name="page-url" value="https://abelix.by/">
+                                    <input type="hidden" name="page-id" value="306">
+                                </div>
+                            </form>
+                        </div>
                         </div>
                     </div>
-                    <div class="b-socialbox">
-                        <div class="socialbox__row">
-                            <div class="socialbox__item"><a target="_blank" href=""><img loading="lazy" src="./images/i-messerger-tg.svg" style="max-width: 37px;" alt=""></a></div>
-                            <div class="socialbox__item"><a target="_blank" href=""><img loading="lazy" src="./images/i-messerger-wp.svg" style="max-width: 37px;" alt=""></a></div>
+                    <div class="col-12"></div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="b-quote mb-4">
+                            <div class="quote__box">
+                                <div class="quote__title mb-3">Нужна помощь ?</div>
+                                <div class="quote__nums"><a href="tel:+375447587134">+7-981-764-55-45</a></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-9 col-lg-9">
-                    <div class="b-mail">
-                        <div class="mail__title">
-                            <span>Отдел продаж:</span><span>
+                        <div class="b-mail">
+                            <div class="mail__title">
+                                <span>Отдел продаж:</span><span>
                             <a href="mailto:89817645545@mail.ru">89817645545@mail.ru</a>
                         </span>
+                            </div>
                         </div>
-
+                        <div class="b-socialbox">
+                            <div class="socialbox__row">
+                                <div class="socialbox__item"><a target="_blank" href=""><img loading="lazy" src="./images/i-messerger-tg.svg" style="max-width: 37px;" alt=""></a></div>
+                                <div class="socialbox__item"><a target="_blank" href=""><img loading="lazy" src="./images/i-messerger-wp.svg" style="max-width: 37px;" alt=""></a></div>
+                            </div>
+                        </div>
                     </div>
+                    <!--                <div class="col-md-9 col-lg-9">-->
+                    <!--                    <div class="b-mail">-->
+                    <!--                        <div class="mail__title">-->
+                    <!--                            <span>Отдел продаж:</span><span>-->
+                    <!--                            <a href="mailto:89817645545@mail.ru">89817645545@mail.ru</a>-->
+                    <!--                        </span>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </div>-->
                 </div>
             </div>
-        </div>
+
+
 </body>
 </html>
 
